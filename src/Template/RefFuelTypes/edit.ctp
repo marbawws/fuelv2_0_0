@@ -4,6 +4,15 @@
  * @var \App\Model\Entity\RefFuelType $refFuelType
  */
 ?>
+<?php
+$urlToFuelsAutocompletedemoJson = $this->Url->build([
+    "controller" => "Fuels",
+    "action" => "findFuels",
+    "_ext" => "json"
+]);
+echo $this->Html->scriptBlock('var urlToAutocompleteAction = "' . $urlToFuelsAutocompletedemoJson . '";', ['block' => true]);
+echo $this->Html->script('RefFuelTypes/add_edit/fuelAutocomplete', ['block' => 'scriptBottom']);
+?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -25,7 +34,8 @@
     <fieldset>
         <legend><?= __('Edit Ref Fuel Type') ?></legend>
         <?php
-            echo $this->Form->control('fuel_id', ['options' => $fuels]);
+//            echo $this->Form->control('fuel_id', ['options' => $fuels]);
+            echo $this->Form->control('fuel_id', ['label' => __('fuel') . ' (' . __('Autocomplete demo') . ')', 'type' => 'text', 'id' => 'autocomplete']);
             echo $this->Form->control('description');
             echo $this->Form->control('fuel_specific_id', ['options' => $fuelSpecifics]);
         ?>

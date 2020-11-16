@@ -17,11 +17,36 @@ class FuelsController extends AppController
      *
      * @return \Cake\Http\Response|null
      */
+    public function initialize()
+    {
+        parent::initialize();
+        $this->Auth->allow(['findFuels', 'add', 'edit', 'delete']);
+    }
+
     public function index()
     {
         $fuels = $this->paginate($this->Fuels);
 
         $this->set(compact('fuels'));
+    }
+
+    public function findFuels()
+    {
+
+        if ($this->request->is('ajax')) {
+
+            $this->autoRender = false;
+            $name = $this->request->query['term'];
+            $results = $this->Fuels->find('all', array(
+                'conditions' => array('Fuels.name LIKE ' => '%' . $name . '%')
+            ));
+
+            $resultArr = array();
+            foreach ($results as $result) {
+                $resultArr[] = array('label' => $result['name'], 'value' => $result['id']);
+            }
+            echo json_encode($resultArr);
+        }
     }
 
     /**

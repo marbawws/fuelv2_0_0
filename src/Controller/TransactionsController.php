@@ -21,24 +21,7 @@ class TransactionsController extends AppController
         I18n::setLocale($this->request->session()->read('Config.language'));
         $this->Auth->allow(['findObecCities', 'add', 'edit', 'delete']);
     }
-    public function findObecCities()
-    {
 
-        if ($this->request->is('ajax')) {
-
-            $this->autoRender = false;
-            $name = $this->request->query['term'];
-            $results = $this->ObecCities->find('all', array(
-                'conditions' => array('ObecCities.nazev LIKE ' => '%' . $name . '%')
-            ));
-
-            $resultArr = array();
-            foreach ($results as $result) {
-                $resultArr[] = array('label' => $result['nazev'], 'value' => $result['id']);
-            }
-            echo json_encode($resultArr);
-        }
-    }
     public function isAuthorized($user)
     {
         $action = $this->request->getParam('action');
