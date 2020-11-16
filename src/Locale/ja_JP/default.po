@@ -1,0 +1,620 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2020-10-15 19:36+0000\n"
+"PO-Revision-Date: 2020-10-15 17:58-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: Controller/FuelSpecificsController.php:54
+#: Controller/FuelSpecificsController.php:78
+msgid "The fuel specific has been saved."
+msgstr ""
+
+#: Controller/FuelSpecificsController.php:58
+#: Controller/FuelSpecificsController.php:82
+msgid "The fuel specific could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/FuelSpecificsController.php:99
+msgid "The fuel specific has been deleted."
+msgstr ""
+
+#: Controller/FuelSpecificsController.php:101
+msgid "The fuel specific could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PlacesController.php:54 Controller/PlacesController.php:79
+msgid "The place has been saved."
+msgstr ""
+
+#: Controller/PlacesController.php:58 Controller/PlacesController.php:83
+msgid "The place could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PlacesController.php:101
+msgid "The place has been deleted."
+msgstr ""
+
+#: Controller/PlacesController.php:103
+msgid "The place could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/RefFuelTypesController.php:57
+#: Controller/RefFuelTypesController.php:82
+msgid "The ref fuel type has been saved."
+msgstr ""
+
+#: Controller/RefFuelTypesController.php:61
+#: Controller/RefFuelTypesController.php:86
+msgid "The ref fuel type could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/RefFuelTypesController.php:104
+msgid "The ref fuel type has been deleted."
+msgstr ""
+
+#: Controller/RefFuelTypesController.php:106
+msgid "The ref fuel type could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/RefTransactionTypesController.php:54
+#: Controller/RefTransactionTypesController.php:78
+msgid "The ref transaction type has been saved."
+msgstr ""
+
+#: Controller/RefTransactionTypesController.php:58
+#: Controller/RefTransactionTypesController.php:82
+msgid "The ref transaction type could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/RefTransactionTypesController.php:99
+msgid "The ref transaction type has been deleted."
+msgstr ""
+
+#: Controller/RefTransactionTypesController.php:101
+msgid "The ref transaction type could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/RolesController.php:54 Controller/RolesController.php:78
+msgid "The role has been saved."
+msgstr ""
+
+#: Controller/RolesController.php:58 Controller/RolesController.php:82
+msgid "The role could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/RolesController.php:99
+msgid "The role has been deleted."
+msgstr ""
+
+#: Controller/RolesController.php:101
+msgid "The role could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/TransactionsController.php:80
+#: Controller/TransactionsController.php:108
+msgid "The transaction has been saved."
+msgstr ""
+
+#: Controller/TransactionsController.php:84
+#: Controller/TransactionsController.php:112
+msgid "The transaction could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TransactionsController.php:133
+msgid "The transaction has been deleted."
+msgstr ""
+
+#: Controller/TransactionsController.php:135
+msgid "The transaction could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:31
+msgid "missing parameter"
+msgstr ""
+
+#: Controller/UsersController.php:101 Controller/UsersController.php:126
+msgid "The user has been saved."
+msgstr ""
+
+#: Controller/UsersController.php:105 Controller/UsersController.php:130
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:148
+msgid "The user has been deleted."
+msgstr ""
+
+#: Controller/UsersController.php:150
+msgid "The user could not be deleted. Please, try again."
+msgstr ""
+
+#: Template/FuelSpecifics/add.ctp:9 Template/FuelSpecifics/edit.ctp:9
+#: Template/FuelSpecifics/index.ctp:9 Template/FuelSpecifics/index.ctp:26
+#: Template/FuelSpecifics/view.ctp:9 Template/FuelSpecifics/view.ctp:55
+#: Template/Places/add.ctp:9 Template/Places/edit.ctp:9
+#: Template/Places/index.ctp:9 Template/Places/index.ctp:26
+#: Template/Places/view.ctp:9 Template/Places/view.ctp:59
+#: Template/RefFuelTypes/add.ctp:9 Template/RefFuelTypes/edit.ctp:9
+#: Template/RefFuelTypes/index.ctp:9 Template/RefFuelTypes/index.ctp:24
+#: Template/RefFuelTypes/view.ctp:9 Template/RefTransactionTypes/add.ctp:9
+#: Template/RefTransactionTypes/edit.ctp:9
+#: Template/RefTransactionTypes/index.ctp:9
+#: Template/RefTransactionTypes/index.ctp:20
+#: Template/RefTransactionTypes/view.ctp:9 Template/Roles/add.ctp:9
+#: Template/Roles/edit.ctp:9 Template/Roles/index.ctp:9
+#: Template/Roles/index.ctp:24 Template/Roles/view.ctp:9
+#: Template/Roles/view.ctp:54 Template/Transactions/add.ctp:9
+#: Template/Transactions/edit.ctp:9 Template/Transactions/index.ctp:9
+#: Template/Transactions/index.ctp:34 Template/Transactions/view.ctp:9
+#: Template/Transactions/view.ctp:71 Template/Users/add.ctp:9
+#: Template/Users/edit.ctp:9 Template/Users/index.ctp:9
+#: Template/Users/index.ctp:29 Template/Users/view.ctp:9
+#: Template/Users/view.ctp:65
+msgid "Actions"
+msgstr "行動"
+
+#: Template/FuelSpecifics/add.ctp:10 Template/FuelSpecifics/edit.ctp:16
+#: Template/FuelSpecifics/view.ctp:12 Template/RefFuelTypes/add.ctp:11
+#: Template/RefFuelTypes/edit.ctp:17 Template/RefFuelTypes/index.ctp:11
+#: Template/RefFuelTypes/view.ctp:14
+msgid "List Fuel Specifics"
+msgstr ""
+
+#: Template/FuelSpecifics/add.ctp:11 Template/FuelSpecifics/edit.ctp:17
+#: Template/FuelSpecifics/index.ctp:11 Template/FuelSpecifics/view.ctp:14
+#: Template/RefFuelTypes/add.ctp:10 Template/RefFuelTypes/edit.ctp:16
+#: Template/RefFuelTypes/view.ctp:12 Template/Transactions/add.ctp:13
+#: Template/Transactions/edit.ctp:19 Template/Transactions/index.ctp:13
+#: Template/Transactions/view.ctp:16
+msgid "List Ref Fuel Types"
+msgstr ""
+
+#: Template/FuelSpecifics/add.ctp:12 Template/FuelSpecifics/edit.ctp:18
+#: Template/FuelSpecifics/index.ctp:12 Template/FuelSpecifics/view.ctp:15
+#: Template/RefFuelTypes/index.ctp:10 Template/RefFuelTypes/view.ctp:13
+#: Template/Transactions/add.ctp:14 Template/Transactions/edit.ctp:20
+#: Template/Transactions/index.ctp:14 Template/Transactions/view.ctp:17
+msgid "New Ref Fuel Type"
+msgstr ""
+
+#: Template/FuelSpecifics/add.ctp:18
+msgid "Add Fuel Specific"
+msgstr ""
+
+#: Template/FuelSpecifics/add.ctp:25 Template/FuelSpecifics/edit.ctp:31
+#: Template/Places/add.ctp:26 Template/Places/edit.ctp:32
+#: Template/RefFuelTypes/add.ctp:25 Template/RefFuelTypes/edit.ctp:31
+#: Template/RefTransactionTypes/add.ctp:21
+#: Template/RefTransactionTypes/edit.ctp:27 Template/Roles/add.ctp:24
+#: Template/Roles/edit.ctp:30 Template/Transactions/add.ctp:34
+#: Template/Transactions/edit.ctp:40 Template/Users/add.ctp:28
+#: Template/Users/edit.ctp:34
+msgid "Submit"
+msgstr ""
+
+#: Template/FuelSpecifics/edit.ctp:11 Template/FuelSpecifics/index.ctp:41
+#: Template/FuelSpecifics/view.ctp:66 Template/Places/edit.ctp:11
+#: Template/Places/index.ctp:41 Template/Places/view.ctp:74
+#: Template/RefFuelTypes/edit.ctp:11 Template/RefFuelTypes/index.ctp:37
+#: Template/RefTransactionTypes/edit.ctp:11
+#: Template/RefTransactionTypes/index.ctp:31 Template/Roles/edit.ctp:11
+#: Template/Roles/index.ctp:37 Template/Roles/view.ctp:68
+#: Template/Transactions/edit.ctp:11 Template/Transactions/index.ctp:51
+#: Template/Transactions/view.ctp:84 Template/Users/edit.ctp:11
+#: Template/Users/index.ctp:45 Template/Users/view.ctp:80
+msgid "Delete"
+msgstr "削除"
+
+#: Template/FuelSpecifics/edit.ctp:13 Template/FuelSpecifics/index.ctp:41
+#: Template/FuelSpecifics/view.ctp:11 Template/FuelSpecifics/view.ctp:66
+#: Template/Places/edit.ctp:13 Template/Places/index.ctp:41
+#: Template/Places/view.ctp:11 Template/Places/view.ctp:74
+#: Template/RefFuelTypes/edit.ctp:13 Template/RefFuelTypes/index.ctp:37
+#: Template/RefFuelTypes/view.ctp:11 Template/RefTransactionTypes/edit.ctp:13
+#: Template/RefTransactionTypes/index.ctp:31
+#: Template/RefTransactionTypes/view.ctp:11 Template/Roles/edit.ctp:13
+#: Template/Roles/index.ctp:37 Template/Roles/view.ctp:11
+#: Template/Roles/view.ctp:68 Template/Transactions/edit.ctp:13
+#: Template/Transactions/index.ctp:51 Template/Transactions/view.ctp:11
+#: Template/Transactions/view.ctp:84 Template/Users/edit.ctp:13
+#: Template/Users/index.ctp:45 Template/Users/view.ctp:11
+#: Template/Users/view.ctp:80
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/FuelSpecifics/edit.ctp:24 Template/FuelSpecifics/view.ctp:10
+msgid "Edit Fuel Specific"
+msgstr ""
+
+#: Template/FuelSpecifics/index.ctp:10 Template/FuelSpecifics/view.ctp:13
+#: Template/RefFuelTypes/add.ctp:12 Template/RefFuelTypes/edit.ctp:18
+#: Template/RefFuelTypes/index.ctp:12 Template/RefFuelTypes/view.ctp:15
+msgid "New Fuel Specific"
+msgstr ""
+
+#: Template/FuelSpecifics/index.ctp:16
+msgid "Fuel Specifics"
+msgstr ""
+
+#: Template/FuelSpecifics/index.ctp:39 Template/FuelSpecifics/view.ctp:64
+#: Template/Places/index.ctp:39 Template/Places/view.ctp:72
+#: Template/RefFuelTypes/index.ctp:35 Template/RefTransactionTypes/index.ctp:29
+#: Template/Roles/index.ctp:35 Template/Roles/view.ctp:66
+#: Template/Transactions/index.ctp:49 Template/Transactions/view.ctp:82
+#: Template/Users/index.ctp:43 Template/Users/view.ctp:78
+msgid "View"
+msgstr "見る"
+
+#: Template/FuelSpecifics/index.ctp:40 Template/FuelSpecifics/view.ctp:65
+#: Template/Places/index.ctp:40 Template/Places/view.ctp:73
+#: Template/RefFuelTypes/index.ctp:36 Template/RefTransactionTypes/index.ctp:30
+#: Template/Roles/index.ctp:36 Template/Roles/view.ctp:67
+#: Template/Transactions/index.ctp:50 Template/Transactions/view.ctp:83
+#: Template/Users/index.ctp:44 Template/Users/view.ctp:79
+msgid "Edit"
+msgstr "編集"
+
+#: Template/FuelSpecifics/index.ctp:49 Template/Places/index.ctp:49
+#: Template/RefFuelTypes/index.ctp:45 Template/RefTransactionTypes/index.ctp:39
+#: Template/Roles/index.ctp:45 Template/Transactions/index.ctp:59
+#: Template/Users/index.ctp:53
+msgid "first"
+msgstr ""
+
+#: Template/FuelSpecifics/index.ctp:50 Template/Places/index.ctp:50
+#: Template/RefFuelTypes/index.ctp:46 Template/RefTransactionTypes/index.ctp:40
+#: Template/Roles/index.ctp:46 Template/Transactions/index.ctp:60
+#: Template/Users/index.ctp:54
+msgid "previous"
+msgstr ""
+
+#: Template/FuelSpecifics/index.ctp:52 Template/Places/index.ctp:52
+#: Template/RefFuelTypes/index.ctp:48 Template/RefTransactionTypes/index.ctp:42
+#: Template/Roles/index.ctp:48 Template/Transactions/index.ctp:62
+#: Template/Users/index.ctp:56
+msgid "next"
+msgstr ""
+
+#: Template/FuelSpecifics/index.ctp:53 Template/Places/index.ctp:53
+#: Template/RefFuelTypes/index.ctp:49 Template/RefTransactionTypes/index.ctp:43
+#: Template/Roles/index.ctp:49 Template/Transactions/index.ctp:63
+#: Template/Users/index.ctp:57
+msgid "last"
+msgstr ""
+
+#: Template/FuelSpecifics/index.ctp:55 Template/Places/index.ctp:55
+#: Template/RefFuelTypes/index.ctp:51 Template/RefTransactionTypes/index.ctp:45
+#: Template/Roles/index.ctp:51 Template/Transactions/index.ctp:65
+#: Template/Users/index.ctp:59
+msgid ""
+"Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
+"total"
+msgstr ""
+
+#: Template/FuelSpecifics/view.ctp:11
+msgid "Delete Fuel Specific"
+msgstr ""
+
+#: Template/FuelSpecifics/view.ctp:22 Template/FuelSpecifics/view.ctp:51
+#: Template/Places/view.ctp:34 Template/Places/view.ctp:51
+#: Template/RefFuelTypes/view.ctp:34 Template/RefTransactionTypes/view.ctp:24
+#: Template/Roles/view.ctp:26 Template/Roles/view.ctp:47
+#: Template/Transactions/view.ctp:44 Template/Transactions/view.ctp:65
+#: Template/Users/view.ctp:40 Template/Users/view.ctp:57
+msgid "Id"
+msgstr ""
+
+#: Template/FuelSpecifics/view.ctp:26
+msgid "Quantity In Stock"
+msgstr ""
+
+#: Template/FuelSpecifics/view.ctp:30
+msgid "Unit Buying Price"
+msgstr ""
+
+#: Template/FuelSpecifics/view.ctp:34
+msgid "Unit Sales Price"
+msgstr ""
+
+#: Template/FuelSpecifics/view.ctp:38 Template/Places/view.ctp:38
+#: Template/Places/view.ctp:52 Template/Roles/view.ctp:30
+#: Template/Roles/view.ctp:52 Template/Transactions/view.ctp:52
+#: Template/Transactions/view.ctp:69 Template/Users/view.ctp:44
+#: Template/Users/view.ctp:58
+msgid "Created"
+msgstr ""
+
+#: Template/FuelSpecifics/view.ctp:42 Template/Places/view.ctp:42
+#: Template/Places/view.ctp:55 Template/Roles/view.ctp:34
+#: Template/Roles/view.ctp:53 Template/Transactions/view.ctp:56
+#: Template/Transactions/view.ctp:70 Template/Users/view.ctp:48
+#: Template/Users/view.ctp:61
+msgid "Modified"
+msgstr ""
+
+#: Template/FuelSpecifics/view.ctp:47
+msgid "Related Ref Fuel Types"
+msgstr ""
+
+#: Template/FuelSpecifics/view.ctp:52 Template/Places/view.ctp:22
+#: Template/RefFuelTypes/view.ctp:22 Template/RefTransactionTypes/view.ctp:20
+#: Template/Roles/view.ctp:22 Template/Transactions/view.ctp:66
+msgid "Name"
+msgstr ""
+
+#: Template/FuelSpecifics/view.ctp:53 Template/Places/view.ctp:26
+#: Template/RefFuelTypes/view.ctp:26 Template/Roles/view.ctp:39
+#: Template/Transactions/view.ctp:67
+msgid "Description"
+msgstr ""
+
+#: Template/FuelSpecifics/view.ctp:54
+msgid "Fuel Specific Id"
+msgstr ""
+
+#: Template/Layout/default.ctp:41
+msgid "FuelStock"
+msgstr ""
+
+#: Template/Layout/error.ctp:36
+msgid "Error"
+msgstr ""
+
+#: Template/Layout/error.ctp:44
+msgid "Back"
+msgstr ""
+
+#: Template/Places/add.ctp:10 Template/Places/edit.ctp:16
+#: Template/Places/view.ctp:12 Template/Transactions/add.ctp:17
+#: Template/Transactions/edit.ctp:23 Template/Transactions/index.ctp:17
+#: Template/Transactions/view.ctp:20
+msgid "List Places"
+msgstr ""
+
+#: Template/Places/add.ctp:11 Template/Places/edit.ctp:17
+#: Template/Places/index.ctp:11 Template/Places/view.ctp:14
+#: Template/Transactions/add.ctp:10 Template/Transactions/edit.ctp:16
+#: Template/Transactions/view.ctp:12 Template/Users/add.ctp:13
+#: Template/Users/edit.ctp:19 Template/Users/index.ctp:13
+#: Template/Users/view.ctp:16
+msgid "List Transactions"
+msgstr ""
+
+#: Template/Places/add.ctp:12 Template/Places/edit.ctp:18
+#: Template/Places/index.ctp:12 Template/Places/view.ctp:15
+#: Template/Transactions/index.ctp:10 Template/Transactions/view.ctp:13
+#: Template/Users/add.ctp:14 Template/Users/edit.ctp:20
+#: Template/Users/index.ctp:14 Template/Users/view.ctp:17
+msgid "New Transaction"
+msgstr ""
+
+#: Template/Places/add.ctp:18
+msgid "Add Place"
+msgstr ""
+
+#: Template/Places/edit.ctp:24 Template/Places/view.ctp:10
+msgid "Edit Place"
+msgstr ""
+
+#: Template/Places/index.ctp:10 Template/Places/view.ctp:13
+#: Template/Transactions/add.ctp:18 Template/Transactions/edit.ctp:24
+#: Template/Transactions/index.ctp:18 Template/Transactions/view.ctp:21
+msgid "New Place"
+msgstr ""
+
+#: Template/Places/index.ctp:16
+msgid "Places"
+msgstr ""
+
+#: Template/Places/view.ctp:11
+msgid "Delete Place"
+msgstr ""
+
+#: Template/Places/view.ctp:30 Template/Transactions/view.ctp:68
+msgid "Details"
+msgstr ""
+
+#: Template/Places/view.ctp:47 Template/Users/view.ctp:53
+msgid "Related Transactions"
+msgstr ""
+
+#: Template/Places/view.ctp:53 Template/Transactions/view.ctp:48
+#: Template/Users/view.ctp:59
+msgid "Amount"
+msgstr ""
+
+#: Template/Places/view.ctp:54 Template/Transactions/view.ctp:28
+#: Template/Users/view.ctp:60
+msgid "Other Details"
+msgstr ""
+
+#: Template/Places/view.ctp:56 Template/Users/view.ctp:62
+msgid "User Id"
+msgstr ""
+
+#: Template/Places/view.ctp:57 Template/Users/view.ctp:63
+msgid "Fuel Type Id"
+msgstr ""
+
+#: Template/Places/view.ctp:58 Template/Users/view.ctp:64
+msgid "Transaction Type Id"
+msgstr ""
+
+#: Template/RefFuelTypes/add.ctp:18
+msgid "Add Ref Fuel Type"
+msgstr ""
+
+#: Template/RefFuelTypes/edit.ctp:24 Template/RefFuelTypes/view.ctp:10
+msgid "Edit Ref Fuel Type"
+msgstr ""
+
+#: Template/RefFuelTypes/index.ctp:16
+msgid "Ref Fuel Types"
+msgstr ""
+
+#: Template/RefFuelTypes/view.ctp:11
+msgid "Delete Ref Fuel Type"
+msgstr ""
+
+#: Template/RefFuelTypes/view.ctp:30
+msgid "Fuel Specific"
+msgstr ""
+
+#: Template/RefTransactionTypes/add.ctp:10
+#: Template/RefTransactionTypes/edit.ctp:16
+#: Template/RefTransactionTypes/view.ctp:12 Template/Transactions/add.ctp:15
+#: Template/Transactions/edit.ctp:21 Template/Transactions/index.ctp:15
+#: Template/Transactions/view.ctp:18
+msgid "List Ref Transaction Types"
+msgstr ""
+
+#: Template/RefTransactionTypes/add.ctp:16
+msgid "Add Ref Transaction Type"
+msgstr ""
+
+#: Template/RefTransactionTypes/edit.ctp:22
+#: Template/RefTransactionTypes/view.ctp:10
+msgid "Edit Ref Transaction Type"
+msgstr ""
+
+#: Template/RefTransactionTypes/index.ctp:10
+#: Template/RefTransactionTypes/view.ctp:13 Template/Transactions/add.ctp:16
+#: Template/Transactions/edit.ctp:22 Template/Transactions/index.ctp:16
+#: Template/Transactions/view.ctp:19
+msgid "New Ref Transaction Type"
+msgstr ""
+
+#: Template/RefTransactionTypes/index.ctp:14
+msgid "Ref Transaction Types"
+msgstr ""
+
+#: Template/RefTransactionTypes/view.ctp:11
+msgid "Delete Ref Transaction Type"
+msgstr ""
+
+#: Template/Roles/add.ctp:10 Template/Roles/edit.ctp:16
+#: Template/Roles/view.ctp:12 Template/Users/add.ctp:11
+#: Template/Users/edit.ctp:17 Template/Users/index.ctp:11
+#: Template/Users/view.ctp:14
+msgid "List Roles"
+msgstr ""
+
+#: Template/Roles/add.ctp:11 Template/Roles/edit.ctp:17
+#: Template/Roles/index.ctp:11 Template/Roles/view.ctp:14
+#: Template/Transactions/add.ctp:11 Template/Transactions/edit.ctp:17
+#: Template/Transactions/index.ctp:11 Template/Transactions/view.ctp:14
+#: Template/Users/add.ctp:10 Template/Users/edit.ctp:16
+#: Template/Users/view.ctp:12
+msgid "List Users"
+msgstr ""
+
+#: Template/Roles/add.ctp:12 Template/Roles/edit.ctp:18
+#: Template/Roles/index.ctp:12 Template/Roles/view.ctp:15
+#: Template/Transactions/add.ctp:12 Template/Transactions/edit.ctp:18
+#: Template/Transactions/index.ctp:12 Template/Transactions/view.ctp:15
+#: Template/Users/index.ctp:10 Template/Users/view.ctp:13
+msgid "New User"
+msgstr ""
+
+#: Template/Roles/add.ctp:18
+msgid "Add Role"
+msgstr ""
+
+#: Template/Roles/edit.ctp:24 Template/Roles/view.ctp:10
+msgid "Edit Role"
+msgstr ""
+
+#: Template/Roles/index.ctp:10 Template/Roles/view.ctp:13
+#: Template/Users/add.ctp:12 Template/Users/edit.ctp:18
+#: Template/Users/index.ctp:12 Template/Users/view.ctp:15
+msgid "New Role"
+msgstr ""
+
+#: Template/Roles/index.ctp:16
+msgid "Roles"
+msgstr ""
+
+#: Template/Roles/view.ctp:11
+msgid "Delete Role"
+msgstr ""
+
+#: Template/Roles/view.ctp:43
+msgid "Related Users"
+msgstr ""
+
+#: Template/Roles/view.ctp:48
+msgid "Role Id"
+msgstr ""
+
+#: Template/Roles/view.ctp:49 Template/Users/view.ctp:28
+msgid "Username"
+msgstr ""
+
+#: Template/Roles/view.ctp:50 Template/Users/view.ctp:32
+msgid "Email"
+msgstr ""
+
+#: Template/Roles/view.ctp:51 Template/Users/view.ctp:36
+msgid "Password"
+msgstr ""
+
+#: Template/Transactions/add.ctp:24
+msgid "Add Transaction"
+msgstr ""
+
+#: Template/Transactions/edit.ctp:30 Template/Transactions/view.ctp:10
+msgid "Edit Transaction"
+msgstr ""
+
+#: Template/Transactions/index.ctp:22
+msgid "Transactions"
+msgstr ""
+
+#: Template/Transactions/view.ctp:11
+msgid "Delete Transaction"
+msgstr ""
+
+#: Template/Transactions/view.ctp:32
+msgid "User"
+msgstr ""
+
+#: Template/Transactions/view.ctp:36
+msgid "Ref Fuel Type"
+msgstr ""
+
+#: Template/Transactions/view.ctp:40
+msgid "Ref Transaction Type"
+msgstr ""
+
+#: Template/Transactions/view.ctp:61
+msgid "Related Places"
+msgstr ""
+
+#: Template/Users/add.ctp:20
+msgid "Add User"
+msgstr ""
+
+#: Template/Users/edit.ctp:26 Template/Users/view.ctp:10
+msgid "Edit User"
+msgstr ""
+
+#: Template/Users/index.ctp:18
+msgid "Users"
+msgstr "ユーザー"
+
+#: Template/Users/view.ctp:11
+msgid "Delete User"
+msgstr ""
+
+#: Template/Users/view.ctp:24
+msgid "Role"
+msgstr ""
