@@ -7,22 +7,21 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Fuels Model
+ * FuelingStations Model
  *
- * @property &\Cake\ORM\Association\BelongsTo $Brands
- * @property &\Cake\ORM\Association\BelongsTo $FuelingStations
- * @property \App\Model\Table\RefFuelTypesTable&\Cake\ORM\Association\HasMany $RefFuelTypes
+ * @property \App\Model\Table\BrandsTable&\Cake\ORM\Association\BelongsTo $Brands
+ * @property \App\Model\Table\FuelsTable&\Cake\ORM\Association\HasMany $Fuels
  *
- * @method \App\Model\Entity\Fuel get($primaryKey, $options = [])
- * @method \App\Model\Entity\Fuel newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\Fuel[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Fuel|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Fuel saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Fuel patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\Fuel[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\Fuel findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\FuelingStation get($primaryKey, $options = [])
+ * @method \App\Model\Entity\FuelingStation newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\FuelingStation[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\FuelingStation|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\FuelingStation saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\FuelingStation patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\FuelingStation[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\FuelingStation findOrCreate($search, callable $callback = null, $options = [])
  */
-class FuelsTable extends Table
+class FuelingStationsTable extends Table
 {
     /**
      * Initialize method
@@ -34,19 +33,16 @@ class FuelsTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('fuels');
+        $this->setTable('fueling_stations');
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Brands', [
             'foreignKey' => 'brand_id',
-        ]);
-        $this->belongsTo('FuelingStations', [
-            'foreignKey' => 'fueling_station_id',
             'joinType' => 'INNER',
         ]);
-        $this->hasMany('RefFuelTypes', [
-            'foreignKey' => 'fuel_id',
+        $this->hasMany('Fuels', [
+            'foreignKey' => 'fueling_station_id',
         ]);
     }
 
@@ -81,7 +77,6 @@ class FuelsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['brand_id'], 'Brands'));
-        $rules->add($rules->existsIn(['fueling_station_id'], 'FuelingStations'));
 
         return $rules;
     }

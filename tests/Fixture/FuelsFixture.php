@@ -17,8 +17,16 @@ class FuelsFixture extends TestFixture
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'name' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'brand_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'fueling_station_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        '_indexes' => [
+            'ForeignKeyFuelingStationId' => ['type' => 'index', 'columns' => ['fueling_station_id'], 'length' => []],
+            'ForeignKeyBrandId' => ['type' => 'index', 'columns' => ['brand_id'], 'length' => []],
+        ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
+            'ForeignKeyBrandId' => ['type' => 'foreign', 'columns' => ['brand_id'], 'references' => ['brands', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
+            'ForeignKeyFuelingStationId' => ['type' => 'foreign', 'columns' => ['fueling_station_id'], 'references' => ['fueling_stations', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -37,6 +45,8 @@ class FuelsFixture extends TestFixture
             [
                 'id' => 1,
                 'name' => 'Lorem ipsum dolor sit amet',
+                'brand_id' => 1,
+                'fueling_station_id' => 1,
             ],
         ];
         parent::init();

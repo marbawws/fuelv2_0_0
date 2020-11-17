@@ -26,6 +26,14 @@
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($fuel->id) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Brand Id') ?></th>
+            <td><?= $this->Number->format($fuel->brand_id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Fueling Station Id') ?></th>
+            <td><?= $this->Number->format($fuel->fueling_station_id) ?></td>
+        </tr>
     </table>
     <div class="related">
         <h4><?= __('Related Ref Fuel Types') ?></h4>

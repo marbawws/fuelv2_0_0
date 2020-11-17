@@ -24,6 +24,8 @@
         <legend><?= __('Edit Fuel') ?></legend>
         <?php
             echo $this->Form->control('name');
+            echo $this->Form->control('brand_id');
+            echo $this->Form->control('fueling_station_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

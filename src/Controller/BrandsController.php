@@ -4,13 +4,13 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * Fuels Controller
+ * Brands Controller
  *
- * @property \App\Model\Table\FuelsTable $Fuels
+ * @property \App\Model\Table\BrandsTable $Brands
  *
- * @method \App\Model\Entity\Fuel[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @method \App\Model\Entity\Brand[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class FuelsController extends AppController
+class BrandsController extends AppController
 {
     /**
      * Index method
@@ -19,25 +19,25 @@ class FuelsController extends AppController
      */
     public function index()
     {
-        $fuels = $this->paginate($this->Fuels);
+        $brands = $this->paginate($this->Brands);
 
-        $this->set(compact('fuels'));
+        $this->set(compact('brands'));
     }
 
     /**
      * View method
      *
-     * @param string|null $id Fuel id.
+     * @param string|null $id Brand id.
      * @return \Cake\Http\Response|null
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null)
     {
-        $fuel = $this->Fuels->get($id, [
-            'contain' => ['RefFuelTypes'],
+        $brand = $this->Brands->get($id, [
+            'contain' => ['FuelingStations', 'Fuels'],
         ]);
 
-        $this->set('fuel', $fuel);
+        $this->set('brand', $brand);
     }
 
     /**
@@ -47,58 +47,58 @@ class FuelsController extends AppController
      */
     public function add()
     {
-        $fuel = $this->Fuels->newEntity();
+        $brand = $this->Brands->newEntity();
         if ($this->request->is('post')) {
-            $fuel = $this->Fuels->patchEntity($fuel, $this->request->getData());
-            if ($this->Fuels->save($fuel)) {
-                $this->Flash->success(__('The fuel has been saved.'));
+            $brand = $this->Brands->patchEntity($brand, $this->request->getData());
+            if ($this->Brands->save($brand)) {
+                $this->Flash->success(__('The brand has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The fuel could not be saved. Please, try again.'));
+            $this->Flash->error(__('The brand could not be saved. Please, try again.'));
         }
-        $this->set(compact('fuel'));
+        $this->set(compact('brand'));
     }
 
     /**
      * Edit method
      *
-     * @param string|null $id Fuel id.
+     * @param string|null $id Brand id.
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function edit($id = null)
     {
-        $fuel = $this->Fuels->get($id, [
+        $brand = $this->Brands->get($id, [
             'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $fuel = $this->Fuels->patchEntity($fuel, $this->request->getData());
-            if ($this->Fuels->save($fuel)) {
-                $this->Flash->success(__('The fuel has been saved.'));
+            $brand = $this->Brands->patchEntity($brand, $this->request->getData());
+            if ($this->Brands->save($brand)) {
+                $this->Flash->success(__('The brand has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The fuel could not be saved. Please, try again.'));
+            $this->Flash->error(__('The brand could not be saved. Please, try again.'));
         }
-        $this->set(compact('fuel'));
+        $this->set(compact('brand'));
     }
 
     /**
      * Delete method
      *
-     * @param string|null $id Fuel id.
+     * @param string|null $id Brand id.
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $fuel = $this->Fuels->get($id);
-        if ($this->Fuels->delete($fuel)) {
-            $this->Flash->success(__('The fuel has been deleted.'));
+        $brand = $this->Brands->get($id);
+        if ($this->Brands->delete($brand)) {
+            $this->Flash->success(__('The brand has been deleted.'));
         } else {
-            $this->Flash->error(__('The fuel could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The brand could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

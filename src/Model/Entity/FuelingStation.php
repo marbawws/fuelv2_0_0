@@ -4,16 +4,16 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Fuel Entity
+ * FuelingStation Entity
  *
  * @property int $id
+ * @property int $brand_id
  * @property string $name
- * @property int|null $brand_id
- * @property int $fueling_station_id
  *
- * @property \App\Model\Entity\RefFuelType[] $ref_fuel_types
+ * @property \App\Model\Entity\Brand $brand
+ * @property \App\Model\Entity\Fuel[] $fuels
  */
-class Fuel extends Entity
+class FuelingStation extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -25,9 +25,9 @@ class Fuel extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
         'brand_id' => true,
-        'fueling_station_id' => true,
-        'ref_fuel_types' => true,
+        'name' => true,
+        'brand' => true,
+        'fuels' => true,
     ];
 }

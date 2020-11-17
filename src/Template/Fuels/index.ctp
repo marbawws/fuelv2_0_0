@@ -19,6 +19,8 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('brand_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('fueling_station_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -27,6 +29,8 @@
             <tr>
                 <td><?= $this->Number->format($fuel->id) ?></td>
                 <td><?= h($fuel->name) ?></td>
+                <td><?= $this->Number->format($fuel->brand_id) ?></td>
+                <td><?= $this->Number->format($fuel->fueling_station_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $fuel->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $fuel->id]) ?>
