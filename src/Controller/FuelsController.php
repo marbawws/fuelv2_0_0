@@ -12,6 +12,12 @@ use App\Controller\AppController;
  */
 class FuelsController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+        $this->Auth->allow(['findFuels', 'add', 'edit', 'delete']);
+    }
+
     /**
      * Index method
      *
@@ -23,7 +29,24 @@ class FuelsController extends AppController
 
         $this->set(compact('fuels'));
     }
+    public function findFuels()
+    {
 
+        if ($this->request->is('ajax')) {
+
+            $this->autoRender = false;
+            $name = $this->request->query['term'];
+            $results = $this->Fuels->find('all', array(
+                'conditions' => array('Fuels.name LIKE ' => '%' . $name . '%')
+            ));
+
+            $resultArr = array();
+            foreach ($results as $result) {
+                $resultArr[] = array('label' => $result['name'], 'value' => $result['id']);
+            }
+            echo json_encode($resultArr);
+        }
+    }
     /**
      * View method
      *
