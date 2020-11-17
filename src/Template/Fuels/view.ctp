@@ -11,6 +11,10 @@
         <li><?= $this->Form->postLink(__('Delete Fuel'), ['action' => 'delete', $fuel->id], ['confirm' => __('Are you sure you want to delete # {0}?', $fuel->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Fuels'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Fuel'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Brands'), ['controller' => 'Brands', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Brand'), ['controller' => 'Brands', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Fueling Stations'), ['controller' => 'FuelingStations', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Fueling Station'), ['controller' => 'FuelingStations', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Ref Fuel Types'), ['controller' => 'RefFuelTypes', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Ref Fuel Type'), ['controller' => 'RefFuelTypes', 'action' => 'add']) ?> </li>
     </ul>
@@ -23,16 +27,16 @@
             <td><?= h($fuel->name) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Brand') ?></th>
+            <td><?= $fuel->has('brand') ? $this->Html->link($fuel->brand->name, ['controller' => 'Brands', 'action' => 'view', $fuel->brand->id]) : '' ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Fueling Station') ?></th>
+            <td><?= $fuel->has('fueling_station') ? $this->Html->link($fuel->fueling_station->name, ['controller' => 'FuelingStations', 'action' => 'view', $fuel->fueling_station->id]) : '' ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($fuel->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Brand Id') ?></th>
-            <td><?= $this->Number->format($fuel->brand_id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Fueling Station Id') ?></th>
-            <td><?= $this->Number->format($fuel->fueling_station_id) ?></td>
         </tr>
     </table>
     <div class="related">

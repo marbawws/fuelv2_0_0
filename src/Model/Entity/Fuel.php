@@ -11,6 +11,8 @@ use Cake\ORM\Entity;
  * @property int|null $brand_id
  * @property int $fueling_station_id
  *
+ * @property \App\Model\Entity\Brand $brand
+ * @property \App\Model\Entity\FuelingStation $fueling_station
  * @property \App\Model\Entity\RefFuelType[] $ref_fuel_types
  */
 class Fuel extends Entity
@@ -28,6 +30,8 @@ class Fuel extends Entity
         'name' => true,
         'brand_id' => true,
         'fueling_station_id' => true,
+        'brand' => true,
+        'fueling_station' => true,
         'ref_fuel_types' => true,
     ];
 }

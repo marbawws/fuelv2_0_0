@@ -12,12 +12,6 @@ use App\Controller\AppController;
  */
 class FuelsController extends AppController
 {
-    public function initialize()
-    {
-        parent::initialize();
-        $this->Auth->allow(['findFuels', 'add', 'edit', 'delete']);
-    }
-
     /**
      * Index method
      *
@@ -25,28 +19,14 @@ class FuelsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Brands', 'FuelingStations'],
+        ];
         $fuels = $this->paginate($this->Fuels);
 
         $this->set(compact('fuels'));
     }
-    public function findFuels()
-    {
 
-        if ($this->request->is('ajax')) {
-
-            $this->autoRender = false;
-            $name = $this->request->query['term'];
-            $results = $this->Fuels->find('all', array(
-                'conditions' => array('Fuels.name LIKE ' => '%' . $name . '%')
-            ));
-
-            $resultArr = array();
-            foreach ($results as $result) {
-                $resultArr[] = array('label' => $result['name'], 'value' => $result['id']);
-            }
-            echo json_encode($resultArr);
-        }
-    }
     /**
      * View method
      *
@@ -57,7 +37,7 @@ class FuelsController extends AppController
     public function view($id = null)
     {
         $fuel = $this->Fuels->get($id, [
-            'contain' => ['RefFuelTypes'],
+            'contain' => ['Brands', 'FuelingStations', 'RefFuelTypes'],
         ]);
 
         $this->set('fuel', $fuel);
@@ -80,7 +60,9 @@ class FuelsController extends AppController
             }
             $this->Flash->error(__('The fuel could not be saved. Please, try again.'));
         }
-        $this->set(compact('fuel'));
+        $brands = $this->Fuels->Brands->find('list', ['limit' => 200]);
+        $fuelingStations = $this->Fuels->FuelingStations->find('list', ['limit' => 200]);
+        $this->set(compact('fuel', 'brands', 'fuelingStations'));
     }
 
     /**
@@ -104,7 +86,9 @@ class FuelsController extends AppController
             }
             $this->Flash->error(__('The fuel could not be saved. Please, try again.'));
         }
-        $this->set(compact('fuel'));
+        $brands = $this->Fuels->Brands->find('list', ['limit' => 200]);
+        $fuelingStations = $this->Fuels->FuelingStations->find('list', ['limit' => 200]);
+        $this->set(compact('fuel', 'brands', 'fuelingStations'));
     }
 
     /**

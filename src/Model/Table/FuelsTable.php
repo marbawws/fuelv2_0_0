@@ -9,8 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Fuels Model
  *
- * @property &\Cake\ORM\Association\BelongsTo $Brands
- * @property &\Cake\ORM\Association\BelongsTo $FuelingStations
+ * @property \App\Model\Table\BrandsTable&\Cake\ORM\Association\BelongsTo $Brands
+ * @property \App\Model\Table\FuelingStationsTable&\Cake\ORM\Association\BelongsTo $FuelingStations
  * @property \App\Model\Table\RefFuelTypesTable&\Cake\ORM\Association\HasMany $RefFuelTypes
  *
  * @method \App\Model\Entity\Fuel get($primaryKey, $options = [])

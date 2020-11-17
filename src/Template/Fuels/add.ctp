@@ -8,6 +8,10 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List Fuels'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Brands'), ['controller' => 'Brands', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Brand'), ['controller' => 'Brands', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Fueling Stations'), ['controller' => 'FuelingStations', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Fueling Station'), ['controller' => 'FuelingStations', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Ref Fuel Types'), ['controller' => 'RefFuelTypes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Ref Fuel Type'), ['controller' => 'RefFuelTypes', 'action' => 'add']) ?></li>
     </ul>
@@ -18,8 +22,8 @@
         <legend><?= __('Add Fuel') ?></legend>
         <?php
             echo $this->Form->control('name');
-            echo $this->Form->control('brand_id');
-            echo $this->Form->control('fueling_station_id');
+            echo $this->Form->control('brand_id', ['options' => $brands, 'empty' => true]);
+            echo $this->Form->control('fueling_station_id', ['options' => $fuelingStations]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -8,6 +8,10 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Fuel'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Brands'), ['controller' => 'Brands', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Brand'), ['controller' => 'Brands', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Fueling Stations'), ['controller' => 'FuelingStations', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Fueling Station'), ['controller' => 'FuelingStations', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Ref Fuel Types'), ['controller' => 'RefFuelTypes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Ref Fuel Type'), ['controller' => 'RefFuelTypes', 'action' => 'add']) ?></li>
     </ul>
@@ -29,8 +33,8 @@
             <tr>
                 <td><?= $this->Number->format($fuel->id) ?></td>
                 <td><?= h($fuel->name) ?></td>
-                <td><?= $this->Number->format($fuel->brand_id) ?></td>
-                <td><?= $this->Number->format($fuel->fueling_station_id) ?></td>
+                <td><?= $fuel->has('brand') ? $this->Html->link($fuel->brand->name, ['controller' => 'Brands', 'action' => 'view', $fuel->brand->id]) : '' ?></td>
+                <td><?= $fuel->has('fueling_station') ? $this->Html->link($fuel->fueling_station->name, ['controller' => 'FuelingStations', 'action' => 'view', $fuel->fueling_station->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $fuel->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $fuel->id]) ?>

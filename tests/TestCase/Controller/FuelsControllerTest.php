@@ -21,6 +21,8 @@ class FuelsControllerTest extends TestCase
      */
     public $fixtures = [
         'app.Fuels',
+        'app.Brands',
+        'app.FuelingStations',
         'app.RefFuelTypes',
     ];
 
