@@ -1,4 +1,12 @@
 <?php
+$urlToLinkedListFilter = $this->Url->build([
+    "controller" => "FuelingStations",
+    "action" => "getByBrand",
+    "_ext" => "json"
+]);
+echo $this->Html->scriptBlock('var urlToLinkedListFilter = "' . $urlToLinkedListFilter . '";', ['block' => true]);
+echo $this->Html->script('Fuels/add_edit', ['block' => 'scriptBottom']);
+?><?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Fuel $fuel
@@ -27,9 +35,10 @@
     <fieldset>
         <legend><?= __('Edit Fuel') ?></legend>
         <?php
-            echo $this->Form->control('name');
-            echo $this->Form->control('brand_id', ['options' => $brands, 'empty' => true]);
-            echo $this->Form->control('fueling_station_id', ['options' => $fuelingStations]);
+        echo $this->Form->control('name');
+        echo $this->Form->control('brand_id', ['options' => $brands, 'empty' => true]);
+        //            echo $this->Form->control('fueling_station_id', ['options' => $fuelingStations]);
+        echo $this->Form->control('fueling_station_id', ['options' => [__('Please select a Brand first')]]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

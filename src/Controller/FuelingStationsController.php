@@ -12,6 +12,23 @@ use App\Controller\AppController;
  */
 class FuelingStationsController extends AppController
 {
+
+    public function initialize() {
+        parent::initialize();
+        $this->Auth->allow(['getByBrand', 'add', 'edit', 'delete']);
+    }
+
+
+    public function getByBrand() {
+        $brand_id = $this->request->query('brand_id');
+
+        $fuelingStations = $this->FuelingStations->find('all', [
+            'conditions' => ['FuelingStations.brand_id' => $brand_id],
+        ]);
+        $this->set('fuelingStations', $fuelingStations);
+        $this->set('_serialize', ['fuelingStations']);
+    }
+
     /**
      * Index method
      *

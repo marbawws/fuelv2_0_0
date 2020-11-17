@@ -14,7 +14,7 @@ class BrandsController extends AppController
 {
     public function initialize() {
         parent::initialize();
-        $this->Auth->allow(['getByKrajRegion', 'add', 'edit', 'delete']);
+        $this->Auth->allow(['getByBrand', 'add', 'edit', 'delete']);
     }
     /**
      * Index method

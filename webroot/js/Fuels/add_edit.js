@@ -7,7 +7,7 @@ $(document).ready(function () {
                 url: urlToLinkedListFilter,
                 data: 'brand_id=' + brandId,
                 success: function (fuelingStations) {
-                    $select = $('#fueling-stations-id');
+                    $select = $('#fueling-station-id');
                     $select.find('option').remove();
                     $.each(fuelingStations, function (key, value)
                     {
@@ -18,7 +18,7 @@ $(document).ready(function () {
                 }
             });
         } else {
-            $('#fueling-stations-id').html('<option value="">Select brand first</option>');
+            $('#fueling-station-id').html('<option value="">Select brand first</option>');
         }
     });
 });
