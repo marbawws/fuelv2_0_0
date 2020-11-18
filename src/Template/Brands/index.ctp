@@ -1,51 +1,78 @@
 <?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Brand[]|\Cake\Collection\CollectionInterface $brands
- */
+$urlToRestApi = $this->Url->build('/api/brands', true);
+echo $this->Html->scriptBlock('var urlToRestApi = "' . $urlToRestApi . '";', ['block' => true]);
+echo $this->Html->script('Brands/index', ['block' => 'scriptBottom']);
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Brand'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Fueling Stations'), ['controller' => 'FuelingStations', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Fueling Station'), ['controller' => 'FuelingStations', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Fuels'), ['controller' => 'Fuels', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Fuel'), ['controller' => 'Fuels', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="brands index large-9 medium-8 columns content">
-    <h3><?= __('Brands') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 head">
+            <h5>Brands</h5>
+            <!-- Add link -->
+            <div class="float-right">
+                <a href="javascript:void(0);" class="btn btn-success" data-type="add" data-toggle="modal" data-target="#modalBrandAddEdit"><i class="plus"></i> New Brand</a>
+            </div>
+        </div>
+        <div class="statusMsg"></div>
+        <!-- List the brands -->
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th>ID</th>
+                <th>Name</th>
             </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($brands as $brand): ?>
-            <tr>
-                <td><?= $this->Number->format($brand->id) ?></td>
-                <td><?= h($brand->name) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $brand->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $brand->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $brand->id], ['confirm' => __('Are you sure you want to delete # {0}?', $brand->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+            </thead>
+            <tbody id="brandData">
+            <?php if (!empty($brands)) {
+                foreach ($brands as $row) { ?>
+                    <tr>
+                        <td><?php echo '#' . $row['id']; ?></td>
+                        <td><?php echo $row['name']; ?></td>
+                        <td>
+                            <a href="javascript:void(0);" class="btn btn-warning" rowID="<?php echo $row['id']; ?>" data-type="edit" data-toggle="modal" data-target="#modalBrandAddEdit">edit</a>
+                            <a href="javascript:void(0);" class="btn btn-danger" onclick="return confirm('Are you sure to delete data?') ? brandAction('delete', '<?php echo $row['id']; ?>') : false;">delete</a>
+                        </td>
+                    </tr>
+                <?php }
+            } else { ?>
+                <tr><td colspan="5">No brand(s) found...</td></tr>
+            <?php } ?>
+            </tbody>
+        </table>
     </div>
 </div>
+
+
+
+<!-- Modal Add and Edit Form -->
+<div class="modal fade" id="modalBrandAddEdit" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add New Brand</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <div class="statusMsg"></div>
+                <form role="form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="brand's name">
+                    </div>
+                    <input type="hidden" class="form-control" name="id" id="id"/>
+                </form>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="brandSubmit">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

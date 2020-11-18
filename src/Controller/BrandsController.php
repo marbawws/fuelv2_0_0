@@ -23,7 +23,9 @@ class BrandsController extends AppController
      */
     public function index()
     {
-        $brands = $this->paginate($this->Brands);
+        $this->viewBuilder()->setLayout('brandsSpa');
+        $brands = $this->Brands->find('all');
+        //$brands = $this->paginate($this->Brands);
 
         $this->set(compact('brands'));
     }
