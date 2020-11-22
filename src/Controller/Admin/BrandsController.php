@@ -12,10 +12,6 @@ use App\Controller\AppController;
  */
 class BrandsController extends AppController
 {
-    /*public function initialize() {
-        parent::initialize();
-        $this->Auth->allow(['getByBrand', 'add', 'edit', 'delete']);
-    }*/
     /**
      * Index method
      *
@@ -23,8 +19,6 @@ class BrandsController extends AppController
      */
     public function index()
     {
-        //$this->viewBuilder()->setLayout('brandsSpa');
-        //$brands = $this->Brands->find('all');
         $brands = $this->paginate($this->Brands);
 
         $this->set(compact('brands'));
