@@ -16,6 +16,7 @@ class FuelsController extends AppController
     {
         parent::initialize();
         $this->Auth->allow(['findFuels', 'add', 'edit', 'delete']);
+        $this->viewBuilder()->setLayout('cakephp_default');
     }
     /**
      * Index method

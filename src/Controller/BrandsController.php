@@ -15,6 +15,7 @@ class BrandsController extends AppController
     public function initialize() {
         parent::initialize();
         $this->Auth->allow(['getByBrand'/*, 'add', 'edit', 'delete'*/]);
+        $this->viewBuilder()->setLayout('cakephp_default');
     }
     /**
      * Index method

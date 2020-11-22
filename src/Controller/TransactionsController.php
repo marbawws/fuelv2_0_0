@@ -20,6 +20,7 @@ class TransactionsController extends AppController
         //$this->Auth->deny('index','view');
         I18n::setLocale($this->request->session()->read('Config.language'));
         $this->Auth->allow(['findObecCities', 'add', 'edit', 'delete']);
+        $this->viewBuilder()->setLayout('cakephp_default');
     }
 
     public function isAuthorized($user)

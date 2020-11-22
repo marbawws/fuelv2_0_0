@@ -7,7 +7,8 @@
 <li><?= $this->Html->link(__('List Fuels'), ['controller' => 'Fuels', 'action' => 'index'], ['class' => 'nav-link']) ?></li>
 <li><?= $this->Html->link(__('New Fuel'), ['controller' => 'Fuels', 'action' => 'add'], ['class' => 'nav-link']) ?></li>
 <?php $this->end(); ?>
-<?php $this->assign('tb_sidebar', '<ul class="nav flex-column">' . $this->fetch('tb_actions') . '</ul>'); ?>
+<?php $this->assign('tb_sidebar', $this->fetch('tb_actions')); ?>
+<?php //$this->assign('tb_sidebar', '<ul class="nav flex-column">' . $this->fetch('tb_actions') . '</ul>'); ?>
 
 <table class="table table-striped">
     <thead>

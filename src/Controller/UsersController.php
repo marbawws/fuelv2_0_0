@@ -21,6 +21,7 @@ class UsersController extends AppController
         $this->Auth->allow(['logout', 'add', 'confirm', 'resendConfirmEmail']); // actions logout and add do not require auth;
         $this->Auth->deny(['index','view']);
         I18n::setLocale($this->request->session()->read('Config.language'));
+        $this->viewBuilder()->setLayout('cakephp_default');
     }
 
     public function isAuthorized($user)

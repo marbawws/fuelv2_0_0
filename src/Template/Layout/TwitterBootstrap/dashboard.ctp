@@ -9,22 +9,39 @@ $this->start('tb_body_start');
 <body <?= $this->fetch('tb_body_attrs') ?>>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
         <?= $this->Html->link(Configure::read('App.title'), '/', ['class' => 'navbar-brand col-sm-3 col-md-2 mr-0']) ?>
-        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+<!--        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">-->
 
-        <ul class="navbar-nav px-3">
-            <li class="nav-item text-nowrap">
-                <a class="nav-link" href="#">Sign out</a>
-            </li>
-        </ul>
+            <ul class="navbar-nav px-3">
+                <?= $this->fetch('tb_sidebar') ?>
+                <li class="nav-item text-nowrap">
+                    <a class="nav-link" href="#">Sign out</a>
+                </li>
+            </ul>
+        </div>
+
+<!--        <ul class="navbar-nav px-3">-->
+<!--            <li class="nav-item text-nowrap">-->
+<!--                <a class="nav-link" href="#">Sign out</a>-->
+<!--            </li>-->
+<!--        </ul>-->
     </nav>
 
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <?= $this->fetch('tb_sidebar') ?>
-                </div>
-            </nav>
+<!--            <nav class="col-md-2 d-none d-md-block bg-light sidebar">-->
+<!--                <div class="dropdown">-->
+<!--                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                        --><?//= __("Actions"); ?>
+<!--                    </button>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+<!--                        --><?//= $this->fetch('tb_sidebar') ?>
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </nav>-->
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
                 <h1 class="page-header"><?= $this->request->controller; ?></h1>
 <?php

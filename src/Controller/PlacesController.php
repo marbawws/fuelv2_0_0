@@ -19,6 +19,7 @@ class PlacesController extends AppController
         //$this->Auth->allow('index'); // actions logout and add do not require auth
         //$this->Auth->deny('index','view');
         I18n::setLocale($this->request->session()->read('Config.language'));
+        $this->viewBuilder()->setLayout('cakephp_default');
     }
     /**
      * Index method
