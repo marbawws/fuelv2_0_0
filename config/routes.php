@@ -27,6 +27,12 @@ Router::prefix('api', function ($routes) {
     $routes->resources('Brands');
 });
 
+Router::prefix('admin', function (RouteBuilder $routes) {
+    // All routes here will be prefixed with `/admin`
+    // And have the prefix => admin route element added.
+    $routes->fallbacks(DashedRoute::class);
+});
+
 Router::extensions(['json', 'xml']);
 
 /*

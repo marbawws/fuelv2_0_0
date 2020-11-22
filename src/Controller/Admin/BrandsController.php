@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Controller\AppController;
 
@@ -12,10 +12,10 @@ use App\Controller\AppController;
  */
 class BrandsController extends AppController
 {
-    public function initialize() {
+    /*public function initialize() {
         parent::initialize();
-        $this->Auth->allow(['getByBrand'/*, 'add', 'edit', 'delete'*/]);
-    }
+        $this->Auth->allow(['getByBrand', 'add', 'edit', 'delete']);
+    }*/
     /**
      * Index method
      *
@@ -23,9 +23,9 @@ class BrandsController extends AppController
      */
     public function index()
     {
-        $this->viewBuilder()->setLayout('brandsSpa');
-        $brands = $this->Brands->find('all');
-        //$brands = $this->paginate($this->Brands);
+        //$this->viewBuilder()->setLayout('brandsSpa');
+        //$brands = $this->Brands->find('all');
+        $brands = $this->paginate($this->Brands);
 
         $this->set(compact('brands'));
     }
@@ -37,21 +37,21 @@ class BrandsController extends AppController
      * @return \Cake\Http\Response|null
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    /*public function view($id = null)
+    public function view($id = null)
     {
         $brand = $this->Brands->get($id, [
             'contain' => ['FuelingStations', 'Fuels'],
         ]);
 
         $this->set('brand', $brand);
-    }*/
+    }
 
     /**
      * Add method
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-   /* public function add()
+    public function add()
     {
         $brand = $this->Brands->newEntity();
         if ($this->request->is('post')) {
@@ -64,7 +64,7 @@ class BrandsController extends AppController
             $this->Flash->error(__('The brand could not be saved. Please, try again.'));
         }
         $this->set(compact('brand'));
-    }*/
+    }
 
     /**
      * Edit method
@@ -73,7 +73,7 @@ class BrandsController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    /*public function edit($id = null)
+    public function edit($id = null)
     {
         $brand = $this->Brands->get($id, [
             'contain' => [],
@@ -88,7 +88,7 @@ class BrandsController extends AppController
             $this->Flash->error(__('The brand could not be saved. Please, try again.'));
         }
         $this->set(compact('brand'));
-    }*/
+    }
 
     /**
      * Delete method
@@ -97,7 +97,7 @@ class BrandsController extends AppController
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    /*public function delete($id = null)
+    public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
         $brand = $this->Brands->get($id);
@@ -108,5 +108,5 @@ class BrandsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
-    }*/
+    }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "654e529dbc85feb7ccd9e06e928da41c",
+    "content-hash": "4f37b0d184882118a41507c1cd5d3f87",
     "packages": [
         {
             "name": "aura/intl",
@@ -297,6 +297,58 @@
             ],
             "description": "A composer installer for CakePHP 3.0+ plugins.",
             "time": "2020-10-29T04:00:42+00:00"
+        },
+        {
+            "name": "friendsofcake/bootstrap-ui",
+            "version": "2.0.0-RC",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfCake/bootstrap-ui.git",
+                "reference": "b15aed69e0448b24bd1e5332bfd05d3786a0d386"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfCake/bootstrap-ui/zipball/b15aed69e0448b24bd1e5332bfd05d3786a0d386",
+                "reference": "b15aed69e0448b24bd1e5332bfd05d3786a0d386",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "^3.7.0"
+            },
+            "require-dev": {
+                "cakephp/bake": "^1.8",
+                "cakephp/cakephp-codesniffer": "^3.1",
+                "phpunit/phpunit": "^5.7.14|^6.0"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "BootstrapUI\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jad Bitar",
+                    "homepage": "http://jadb.io",
+                    "role": "Author"
+                },
+                {
+                    "name": "Others",
+                    "homepage": "https://github.com/friendsofcake/bootstrap-ui/graphs/contributors"
+                }
+            ],
+            "description": "Twitter Bootstrap 3 support for CakePHP 3",
+            "homepage": "http://github.com/friendsofcake/bootstrap-ui",
+            "keywords": [
+                "bootstrap",
+                "cakephp",
+                "twitter"
+            ],
+            "time": "2020-08-23T15:08:21+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
@@ -4935,6 +4987,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "friendsofcake/bootstrap-ui": 5,
         "psy/psysh": 0
     },
     "prefer-stable": true,
