@@ -43,6 +43,9 @@ use Cake\Mailer\TransportFactory;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
 
+Configure::write('CakePdf', [
+    'engine' => 'CakePdf.Mpdf'
+]);
 /*
  * Uncomment block of code below if you want to use `.env` file during development.
  * You should copy `config/.env.example` to `config/.env` and set/modify the

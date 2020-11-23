@@ -1,7 +1,7 @@
 <h1>Rezgui Marwane</h1>
 
-<h2>420-5b7 MO Applications internet.</h2>
-<h2>Automne 2018, Collège Montmorency.</h2>
+<h2>420-267 MO Développer un site Web et une application pour Internet.</h2>
+<h2>Automne 2020, Collège Montmorency.</h2>
 
 <h3>Étapes de bien fonctionnement:</h3>
 <p>Allez sur la page transaction/page pour voir la relation m-n (ajouter un argument après page comme "park")</p>

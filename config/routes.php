@@ -34,6 +34,7 @@ Router::prefix('admin', function (RouteBuilder $routes) {
 });
 
 Router::extensions(['json', 'xml']);
+Router::extensions(['pdf']);
 
 /*
  * The default class to use for all routes

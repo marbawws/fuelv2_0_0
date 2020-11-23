@@ -16,8 +16,6 @@ class RefFuelTypesController extends AppController
     public function initialize()
     {
         parent::initialize(); //
-        //$this->Auth->allow('index'); // actions logout and add do not require auth
-        //$this->Auth->deny('index','view');
         I18n::setLocale($this->request->session()->read('Config.language'));
         $this->viewBuilder()->setLayout('cakephp_default');
     }

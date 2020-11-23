@@ -54,7 +54,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <nav class="top-bar expanded" data-topbar role="navigation">
     <ul class="title-area large-3 medium-4 columns">
         <li class="name">
-            <h1><a href="http://localhost/cakephp/fuel/fuel_v_1_0_0/"><?=__("FuelStock") . " v1.0.0";?> - <?= $this->fetch('title') ?></a></h1>
+            <h1><a href="http://localhost/cakephp/fuel/fuel_v_2_0_0/"><?=__("FuelStock") . " v2.0.0";?> - <?= $this->fetch('title') ?></a></h1>
 
         </li>
     </ul>
@@ -65,6 +65,18 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </li>
             <li>
                 <?= $this->Html->link(__('Monopage'), ['controller' => 'Brands', 'action' => 'index']) ?>
+            </li>
+            <li>
+                <?= $this->Html->link(__('Version admin'), ['controller' => 'Admin/Brands', 'action' => 'index']) ?>
+            </li>
+            <li>
+                <?= $this->Html->link(__('Autocomplétion'), ['controller' => 'RefFuelTypes', 'action' => 'add']) ?>
+            </li>
+            <li>
+                <?= $this->Html->link(__('Listes liées'), ['controller' => 'fuels', 'action' => 'add']) ?>
+            </li>
+            <li>
+                <?= $this->Html->link(__('Pdf'), ['controller' => 'Transactions', 'action' => 'index']) ?>
             </li>
             <li>
                 <?php

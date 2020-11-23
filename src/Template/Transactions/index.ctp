@@ -43,10 +43,10 @@
                 <td><?= h($transaction->other_details) ?></td>
                 <td><?= h($transaction->modified) ?></td>
                 <td><?= $transaction->has('user') ? $this->Html->link($transaction->user->username, ['controller' => 'Users', 'action' => 'view', $transaction->user->id]) : '' ?></td>
-                <td><?= $transaction->has('ref_fuel_type') ? $this->Html->link($transaction->ref_fuel_type->id, ['controller' => 'RefFuelTypes', 'action' => 'view', $transaction->ref_fuel_type->id]) : '' ?></td>
+                <td><?= $transaction->has('ref_fuel_type') ? $this->Html->link($transaction->ref_fuel_type->description, ['controller' => 'RefFuelTypes', 'action' => 'view', $transaction->ref_fuel_type->id]) : '' ?></td>
                 <td><?= $transaction->has('ref_transaction_type') ? $this->Html->link($transaction->ref_transaction_type->name, ['controller' => 'RefTransactionTypes', 'action' => 'view', $transaction->ref_transaction_type->id]) : '' ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $transaction->id]) ?>
+                    <?= $this->Html->link(__('View (pdf)'), ['action' => 'view', $transaction->id . '.pdf']) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $transaction->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $transaction->id], ['confirm' => __('Are you sure you want to delete # {0}?', $transaction->id)]) ?>
                 </td>
