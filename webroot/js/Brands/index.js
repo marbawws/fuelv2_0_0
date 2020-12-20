@@ -1,120 +1,138 @@
-// Update the brands data list
-function getBrands() {
-    $.ajax({
-        type: 'GET',
-        url: urlToRestApi,
-        dataType: "json",
-        success:
-            function (data) {
-                var brandTable = $('#brandData');
-                brandTable.empty();
-                $.each(data.brands, function (key, value)
-                {
-                    var editDeleteButtons = '</td><td>' +
-                        '<a href="javascript:void(0);" class="btn btn-warning" rowID="' +
-                        value.id +
-                        '" data-type="edit" data-toggle="modal" data-target="#modalBrandAddEdit">' +
-                        'edit</a>' +
-                        '<a href="javascript:void(0);" class="btn btn-danger"' +
-                        'onclick="return confirm(\'Are you sure to delete data?\') ?' +
-                        'brandAction(\'delete\', \'' +
-                        value.id +
-                        '\') : false;">delete</a>' +
-                        '</td></tr>';
-                    brandTable.append('<tr><td>' + value.id + '</td><td>' + value.name + editDeleteButtons);
+var app = angular.module('app', []);
 
+app.controller('BrandCRUDCtrl', ['$scope', 'BrandCRUDService', function ($scope, BrandCRUDService) {
+
+    $scope.updateBrand = function (brand) {
+        BrandCRUDService.updateBrand(brand)
+            .then(function success(response) {
+                    $scope.message = 'Brand data updated!';
+                    $scope.errorMessage = '';
+                    //rafrachir la liste
+                    $scope.getAllBrands();
+                },
+                function error(response) {
+                    $scope.errorMessage = 'Error updating brand!';
+                    $scope.message = '';
                 });
-
-            }
-
-    });
-}
-
-/* Function takes a jquery form
-and converts it to a JSON dictionary */
-function convertFormToJSON(form) {
-    var array = $(form).serializeArray();
-    var json = {};
-
-    $.each(array, function () {
-        json[this.name] = this.value || '';
-    });
-
-    return json;
-}
-
-
-function brandAction(type, id) {
-    id = (typeof id == "undefined") ? '' : id;
-    var statusArr = {add: "added", edit: "updated", delete: "deleted"};
-    var requestType = '';
-    var brandData = '';
-    var ajaxUrl = urlToRestApi;
-    frmElement = $("#modalBrandAddEdit");
-    if (type == 'add') {
-        requestType = 'POST';
-        brandData = convertFormToJSON(frmElement.find('form'));
-    } else if (type == 'edit') {
-        requestType = 'PUT';
-        ajaxUrl = ajaxUrl + "/" + id;
-        brandData = convertFormToJSON(frmElement.find('form'));
-    } else {
-        requestType = 'DELETE';
-        ajaxUrl = ajaxUrl + "/" + id;
     }
-    frmElement.find('.statusMsg').html('');
-    $.ajax({
-        type: requestType,
-        url: ajaxUrl,
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(brandData),
-        success: function (msg) {
-            if (msg) {
-                frmElement.find('.statusMsg').html('<p class="alert alert-success">Brand data has been ' + statusArr[type] + ' successfully.</p>');
-                getBrands();
-                if (type == 'add') {
-                    frmElement.find('form')[0].reset();
-                }
-            } else {
-                frmElement.find('.statusMsg').html('<p class="alert alert-danger">Some problem occurred, please try again.</p>');
-            }
-        }
-    });
-}
 
-// Fill the brand's data in the edit form
-function editBrand(id) {
-    $.ajax({
-        type: 'GET',
-        url: urlToRestApi + "/" + id,
-        dataType: 'JSON',
-    //    data: 'action_type=data&id=' + id,
-        success: function (data) {
-            $('#id').val(data.brand.id);
-            $('#name').val(data.brand.name);
-        }
-    });
-}
+    $scope.getBrand = function (id) {
+        //var id = $scope.brand.id;
+        BrandCRUDService.getBrand(id)
+            .then(function success(response) {
+                    $scope.brand = response.data.brand;
+                    $scope.brand.id = id;
+                    $scope.message = '';
+                    $scope.errorMessage = '';
+                },
+                function error(response) {
+                    $scope.message = '';
+                    if (response.status === 404) {
+                        $scope.errorMessage = 'Brand not found!';
+                    } else {
+                        $scope.errorMessage = "Error getting brand!";
+                    }
+                });
+    }
 
-// Actions on modal show and hidden events
-$(function () {
-    $('#modalBrandAddEdit').on('show.bs.modal', function (e) {
-        var type = $(e.relatedTarget).attr('data-type');
-        var brandFunc = "brandAction('add');";
-        $('.modal-title').html('Add new brand');
-        if (type == 'edit') {
-            var rowId = $(e.relatedTarget).attr('rowID');
-            brandFunc = "brandAction('edit'," + rowId + ");";
-            $('.modal-title').html('Edit brand');
-            editBrand(rowId);
-        }
-        $('#brandSubmit').attr("onclick", brandFunc);
-    });
+    $scope.addBrand = function () {
+        if ($scope.brand != null && $scope.brand.name) {
+            BrandCRUDService.addBrand($scope.brand.name)
+                .then(function success(response) {
+                        $scope.message = 'Brand added!';
+                        $scope.errorMessage = '';
 
-    $('#modalBrandAddEdit').on('hidden.bs.modal', function () {
-        $('#brandSubmit').attr("onclick", "");
-        $(this).find('form')[0].reset();
-        $(this).find('.statusMsg').html('');
-    });
-});
+                        //rafrachir la liste
+                        $scope.getAllBrands();
+                    },
+                    function error(response) {
+                        $scope.errorMessage = 'Error adding brand!';
+                        $scope.message = '';
+                    });
+        } else {
+            $scope.errorMessage = 'Please enter a name!';
+            $scope.message = '';
+        }
+    }
+
+    $scope.deleteBrand = function () {
+        BrandCRUDService.deleteBrand($scope.brand.id)
+            .then(function success(response) {
+                    $scope.message = 'Brand deleted!';
+                    $scope.brand = null;
+                    $scope.errorMessage = '';
+
+                    //rafrachir la liste
+                    $scope.getAllBrands();
+                },
+                function error(response) {
+                    $scope.errorMessage = 'Error deleting brand!';
+                    $scope.message = '';
+                })
+    }
+
+    $scope.getAllBrands = function () {
+        BrandCRUDService.getAllBrands()
+            .then(function success(response) {
+                    $scope.brands = response.data.brands;
+                    $scope.message = '';
+                    $scope.errorMessage = '';
+                },
+                function error(response) {
+                    $scope.message = '';
+                    $scope.errorMessage = 'Error getting brands!';
+                });
+    }
+
+}]);
+
+app.service('BrandCRUDService', ['$http', function ($http) {
+
+    this.getBrand = function getBrand(brandId) {
+        return $http({
+            method: 'GET',
+            url: urlToRestApi + '/' + brandId,
+            headers: { 'X-Requested-With' : 'XMLHttpRequest',
+                'Accept' : 'application/json'}
+        });
+    }
+
+    this.addBrand = function addBrand(name) {
+        return $http({
+            method: 'POST',
+            url: urlToRestApi,
+            data: {name: name},
+            headers: { 'X-Requested-With' : 'XMLHttpRequest',
+                'Accept' : 'application/json'}
+        });
+    }
+
+    this.deleteBrand = function deleteBrand(id) {
+        return $http({
+            method: 'DELETE',
+            url: urlToRestApi + '/' + id,
+            headers: { 'X-Requested-With' : 'XMLHttpRequest',
+                'Accept' : 'application/json'}
+        })
+    }
+
+    this.updateBrand = function updateBrand(brand) {
+        return $http({
+            method: 'PATCH',
+            url: urlToRestApi + '/' + brand.id,
+            data: {name: brand.name},
+            headers: { 'X-Requested-With' : 'XMLHttpRequest',
+                'Accept' : 'application/json'}
+        })
+    }
+
+    this.getAllBrands = function getAllBrands() {
+        return $http({
+            method: 'GET',
+            url: urlToRestApi,
+            headers: { 'X-Requested-With' : 'XMLHttpRequest',
+                'Accept' : 'application/json'}
+        });
+    }
+
+}]);

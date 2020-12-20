@@ -14,8 +14,17 @@ class BrandsController extends AppController
 {
     public function initialize() {
         parent::initialize();
-        $this->Auth->allow(['getByBrand'/*, 'add', 'edit', 'delete'*/]);
+        $this->Auth->allow(['getByBrand','getBrands' /*, 'add', 'edit', 'delete'*/]);
         //$this->viewBuilder()->setLayout('cakephp_default');
+    }
+
+    public function getBrands() {
+        $brands = $this->Brands->find('all',
+            ['contain' => ['FuelingStations']]);
+        $this->set([
+            'brands' => $brands,
+            '_serialize' => ['brands']
+        ]);
     }
     /**
      * Index method
